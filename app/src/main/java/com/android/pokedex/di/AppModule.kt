@@ -2,6 +2,7 @@ package com.android.pokedex.di
 
 import com.android.pokedex.remote.api.PokeAPI
 import com.android.pokedex.repository.Repository
+import com.android.pokedex.repository.RepositoryImplementation
 import com.android.pokedex.utils.CommonKeys.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -22,8 +23,9 @@ object AppModule {
     @Singleton
     fun providePokemonRepository(
         api: PokeAPI
-    ) = Repository(api)
-
+    ): Repository {
+        return RepositoryImplementation(api)
+    }
 
     @Singleton
     @Provides
