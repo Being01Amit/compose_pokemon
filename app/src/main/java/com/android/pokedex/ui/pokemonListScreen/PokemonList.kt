@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalCoilApi::class)
 
-package com.android.pokedex.ui.pokemonListUI
+package com.android.pokedex.ui.pokemonListScreen
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image

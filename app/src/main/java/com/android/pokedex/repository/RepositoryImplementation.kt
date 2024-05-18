@@ -13,12 +13,10 @@ class RepositoryImplementation @Inject constructor(
 ) : Repository {
     override suspend fun getPokemonList(limit: Int, offSet: Int): Resource<PokemonListResponse> {
         val response = try {
-            Resource.Loading(true)
             api.getPokemonList(limit, offSet)
         } catch (e: Exception) {
             return Resource.Error(e.message.toString())
         }
-        Resource.Loading(false)
         return Resource.Success(response)
     }
 
